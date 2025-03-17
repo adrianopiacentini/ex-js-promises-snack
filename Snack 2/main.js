@@ -7,7 +7,7 @@ const lanciaDado = () => {
             if(stuckInt === 3) {
                 reject('Il dado si è inceppato, ritenta!')
             } else {
-                console.log(`E' uscito il numero ${diceInt}!`)
+                resolve(diceInt)
             }
         }, 3000)
     })
@@ -16,3 +16,5 @@ const lanciaDado = () => {
 }
 
 lanciaDado()
+    .then(result => console.log(`Il risultato del dado è: ${result}`))
+    .catch(err => console.error(err))

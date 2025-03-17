@@ -2,7 +2,7 @@ const getPostTitle = id => {
     const promise = new Promise((resolve, reject) => {
         fetch(`https://dummyjson.com/posts/${id}`)
         .then(resp => resp.json())
-        .then(obj => resolve(`Titolo: ${obj.title}`))
+        .then(post => resolve(`Titolo: ${post.title}`))
         .catch(err => reject(err))
     })
     return promise
